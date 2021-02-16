@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    작성자: {{a.username}}
+    </div>
+<div>
+    제목: {{a.postname}}
+    </div>
+<div>
+    내용: {{a.contents}}<br>
+</div>
+    <a href="{% url 'main:post1' %}">게시판 돌아가기</a>
+</body>
+</html>
