@@ -20,6 +20,8 @@
         <th>내용</th>
         <th>작성일</th>
         <th>수정일</th>
+        <th>수정하기</th>
+        <th>삭제하기</th>
     </tr>
     </thead>
     {% for i in b %}
@@ -31,6 +33,7 @@
         <td>{{i.created_at}}</td>
         <td>{{i.modified_at}}</td>
         <td><a href="{% url 'main:update' i.id %}">수정하기</a></td>
+        <td><a href="{% url 'main:delete' i.id %}">삭제하기</a></td>
     </tr>
     </tbody>
     {% endfor %}

@@ -5,15 +5,15 @@
     <title>Title</title>
 </head>
 <body>
-<div>
+<span style="background-color: #61c6ed">
     작성자: {{a.username}}
-    </div>
-<div>
+    </span><br><br>
+<span style="background-color: #61c6ed">
     제목: {{a.postname}}
-    </div>
-<div>
+    </span><br><br>
+<span style="background-color: #61c6ed">
     내용: {{a.contents}}<br>
-</div>
+</span><br>
     <a href="{% url 'main:post1' %}">게시판 돌아가기</a>
 </body>
 </html>

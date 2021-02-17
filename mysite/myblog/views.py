@@ -80,4 +80,16 @@ def update(request, blog_id):
         return render(request,'myblog/post.html',{'b':b})
     else:
         return render(request,'myblog/update.html',{'blog':blog})
+
+def delete(request, blog_id):
+    blog = Post.objects.get(id=blog_id)
+    b = Post.objects.all()
+    if request.user.username != blog.username:
+        messages.warning(request,'사용자가 다릅니다.')
+        a = {'a': '틀렸습니다' }
+        return render(request,'myblog/post.html',{'b':b,'a':a})
+    else:
+        blog.delete()
+    #b = Post.objects.all()
+    return render(request,'myblog/post.html',{'b':b})
 # Create your views here.
