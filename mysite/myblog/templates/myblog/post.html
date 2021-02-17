@@ -7,12 +7,19 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 </head>
 <body>
+{% if messages %}
+    <script>
+        alert('사용자가 다릅니다.')
+    </script>
+{% endif %}
 <table class="table table-hover">
     <thead>
     <tr>
         <th>아이디</th>
         <th>제목</th>
         <th>내용</th>
+        <th>작성일</th>
+        <th>수정일</th>
     </tr>
     </thead>
     {% for i in b %}
@@ -21,6 +28,9 @@
         <td>{{i.username}}</td>
         <td><a href="{% url 'main:postD' i.id %}">{{i.postname}}</a></td>
         <td>{{i.contents}}</td>
+        <td>{{i.created_at}}</td>
+        <td>{{i.modified_at}}</td>
+        <td><a href="{% url 'main:update' i.id %}">수정하기</a></td>
     </tr>
     </tbody>
     {% endfor %}

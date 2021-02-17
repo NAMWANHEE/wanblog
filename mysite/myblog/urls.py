@@ -11,5 +11,6 @@ urlpatterns=[
     path('post/',views.post,name='post1'),
     path('post/<int:pk>/',views.postD,name='postD'),
     path('create/',views.create,name='create'),
+    path('update/<int:blog_id>/',views.update,name="update"),
 
 ]
