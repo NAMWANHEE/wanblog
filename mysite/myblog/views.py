@@ -69,8 +69,8 @@ def update(request, blog_id):
     b = Post.objects.all()
     if request.user.username != blog.username:
         messages.warning(request,'사용자가 다릅니다.')
-
-        return render(request,'myblog/post.html',{'b':b})
+        a = {'a': '틀렸습니다' }
+        return render(request,'myblog/post.html',{'b':b,'a':a})
     if request.method =="POST":
         blog.postname = request.POST['title']
         blog.contents = request.POST['body']
